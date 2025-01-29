@@ -1,13 +1,9 @@
-mod utils;
-
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-extern "C" {
-    fn alert(s: &str);
-}
-
-#[wasm_bindgen]
-pub fn greet() {
-    alert("Hello, invideo-assignment-wasm!");
+pub fn evaluate_expression(expression: &str) -> String {
+    match meval::eval_str(expression) {
+        Ok(result) => result.to_string(),
+        Err(_) => "Invalid Expression".to_string(),
+    }
 }
