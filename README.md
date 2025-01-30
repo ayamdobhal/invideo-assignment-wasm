@@ -15,6 +15,12 @@ Ensure that Rust is installed. If not it can be installed using:
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
+Add `wasm32-unknown-unknown` target:
+
+```bash
+rustup target add wasm32-unknown-unknown
+```
+
 Next, install `wasm-pack`:
 
 ```bash
@@ -38,3 +44,5 @@ wasm-pack test --firefox
 ```
 
 Where `firefox` can be replaced with `chrome` or `safari`.
+
+Tests can be accessed at: [http://localhost:8000](http://localhost:8000)
